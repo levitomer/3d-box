@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.buttons {
+    display: flex;
+    position: fixed;
+    top: 0;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    padding: 2%;
+    margin: 1%;
+    cursor: pointer;
+}
+.box {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    transform: rotateZ(-45deg) rotateY(45deg) rotateX(-45deg);
+    transform-style: preserve-3d;
+}
+
+.pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #aaa;
+    width: 200px;
+    height: 200px;
+    color: rgb(255, 255, 255);
+    font-size: 48px;
+    transition: filter 0.2s ease-in;
+}
+.pane:hover {
+    filter: brightness(1.2);
+}
+
+.box .pane {
+    position: absolute;
+}
+
+.box .pane-0 {
+    background: #e74c3c;
+    transform: rotateY(0deg) translateZ(100px);
+}
+.box .pane-1 {
+    background: #2ecc71;
+    transform: rotateY(90deg) translateZ(100px);
+}
+.box .pane-2 {
+    background: #3498db;
+    transform: rotateY(180deg) translateZ(100px);
+}
+.box .pane-3 {
+    background: #8e44ad;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.box .pane-4 {
+    background: #e67e22;
+    transform: rotateX(90deg) translateZ(100px);
+}
+.box .pane-5 {
+    background: #34495e;
+    transform: rotateX(-90deg) translateZ(100px);
+}
