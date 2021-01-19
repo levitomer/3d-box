@@ -71,13 +71,15 @@ function Box() {
     // Change the zoom on mouse scroll
     const handleChangeZoom = React.useCallback((e) => {
         e.preventDefault();
+
         const delta = zoom + e.deltaY * -0.01;
         const scroll = Math.min(Math.max(0.125, delta), 4);
-        setZoom(zoom + scroll);
+        if (zoom + scroll < 2) {
+            setZoom(zoom + scroll);
+        }
     }, []);
 
     React.useEffect(() => {
-        console.log('EEEEE');
         box.current.addEventListener('drag', handleHorizontalRotation);
         box.current.addEventListener('drag', handleVerticalRotation);
         box.current.addEventListener('dragstart', handleDragStart);
